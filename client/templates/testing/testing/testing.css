@@ -1,0 +1,96 @@
+/* filters */
+
+.filters{
+    line-height: 1.5;
+    position: relative;
+    padding-left: 50px;
+}
+
+.filters:before{
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve"> <g> <g> <path fill="hotpink" d="M107,257c-7.707-3.2-10.019-9.237-9.965-17.205c0.202-29.495,0.144-58.992-0.023-88.487 c-0.016-2.797-0.889-5.958-2.366-8.324C72.427,107.389,50.01,71.918,27.738,36.355c-2.37-3.784-4.499-7.813-6.078-11.98 c-3.71-9.791-0.168-17.821,9.302-22.143C31.68,1.905,32.323,1.415,33,1c64,0,128,0,192,0c1.129,0.627,2.237,1.295,3.391,1.874 c7.663,3.844,11.273,11.491,8.511,19.585c-1.648,4.828-3.95,9.548-6.656,13.88c-22.232,35.588-44.667,71.049-66.885,106.645 c-1.477,2.367-2.335,5.52-2.369,8.322c-0.212,17.495-0.121,34.994-0.101,52.492c0.011,9.378-3.411,17.23-10.533,23.325 c-10,8.559-20.061,17.049-30.204,25.437c-2.143,1.772-4.756,2.975-7.152,4.441C111,257,109,257,107,257z M215.963,21.366 c-58.432,0-115.791,0-173.78,0c0.971,1.803,1.583,3.117,2.349,4.334c22.947,36.495,45.979,72.937,68.752,109.54 c2.065,3.32,3.45,7.656,3.498,11.541c0.307,25.316,0.158,50.637,0.158,75.956c0,1.727,0,3.455,0,6.421 c6.839-5.77,12.521-10.841,18.508-15.519c4.031-3.149,5.749-6.832,5.693-11.983c-0.203-18.654-0.171-37.313,0.018-55.967 c0.029-2.844,0.708-6.083,2.188-8.451c23.02-36.84,46.225-73.564,69.375-110.323C213.749,25.285,214.67,23.587,215.963,21.366z"/> </g> </g> </svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 15px;
+    left: 25px;
+}
+
+.filters > ul{
+    display: table;
+}
+
+.filters > ul > li{
+    display: table-cell;
+    padding: 15px 15px 15px 40px;
+}
+
+.filters-drop-down{
+    cursor: pointer;
+    position: relative;
+    background-color: lightgrey;
+}
+
+.filters-drop-down_closed{
+    background-color: transparent;
+}
+
+.filters-drop-down__content{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 350px;
+    background-color: lightgrey;
+    padding: 20px;
+    box-sizing: border-box;
+    cursor: auto;
+}
+
+.filters-drop-down > .filters-drop-down__content{
+    display: block;
+}
+
+.filters-drop-down_closed > .filters-drop-down__content{
+    display: none;
+}
+
+.filters-drop-down_closed > .filters-drop-down__label{
+    color: hotpink;
+}
+
+.filters-drop-down__label{
+    position: relative;
+}
+
+.filters-drop-down__label:before{
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 7px;
+    border-color: transparent transparent transparent #333;
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-transition: -webkit-transform ease-out .1s, border-color ease .1s;
+            transition: transform ease-out .1s, border-color ease .1s;
+}
+
+.filters-drop-down_closed .filters-drop-down__label:before{
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-color: transparent transparent transparent hotpink;
+}
+
+.filters ul, .filters li{
+    list-style: none;
+}
+
+/**/

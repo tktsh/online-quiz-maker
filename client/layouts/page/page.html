@@ -1,0 +1,102 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="http://www.iconj.com/ico/6/3/63loe9cyph.ico" type="image/x-icon" />
+    <title>Online Quiz Maker</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" media="screen" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+</head>
+
+<template name="pageLayout">
+
+<header class="header">
+
+    <div class="header__left">
+
+        <div class="open-sidebar">
+            <div class="open-sidebar__shape"></div>
+        </div>
+
+        <nav class="top-nav">
+        <ul>
+          <li class="{{#if isActiveRoute 'main'}}active-menu-item{{/if}}"><a href="{{pathFor route='main'}}">Главная</a></li>
+          <li class="{{#if isActiveRoute 'testing'}}active-menu-item{{/if}}"><a href="{{pathFor route='testing'}}">Тесты</a>
+            <ul>
+                <li><a href="{{pathFor route='testing'}}">Все тесты</a></li>
+                <li><a href="{{pathFor route='editor'}}">Конструктор тестов</a></li>
+                <li><a href="{{pathFor route='special'}}">Специальные тесты</a>
+                    <ul>
+                        <li><a href="#">Математика</a></li>
+                        <li><a href="#">География</a></li>
+                        <li><a href="#">Искусство</a></li>
+                    </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="{{#if isActiveRoute 'gallery'}}active-menu-item{{/if}}"><a href="{{pathFor route='gallery'}}">Галерея</a></li>
+          <li class="{{#if isActiveRoute 'contacts'}}active-menu-item{{/if}}"><a href="{{pathFor route='contacts'}}">Контакты</a></li>
+        </ul>
+        </nav>
+
+    </div>
+
+    <div class="header__right">
+
+        <div class="search-block">
+            <input type="search" placeholder="Искать" />
+        </div>
+
+    </div>
+
+</header>
+
+<div class="page-wrapper">
+  <div class="sidebar">
+    <div class="sidebar__content">
+        <nav class="sidebar-nav">
+            <ul>
+            <li><a href="{{pathFor route='main'}}">Главная</a></li>
+            <li class="menu-drop-down menu-drop-down_closed"><div class="menu-drop-down__btn"><a href="#">Тесты</a></div>
+                <ul>
+                  <li><a href="{{pathFor route='testing'}}">Все тесты</a></li>
+                  <li><a href="{{pathFor route='editor'}}">Конструктор тестов</a></li>
+                  <li class="menu-drop-down menu-drop-down_closed"><div class="menu-drop-down__btn"><a href="#">Специальные тесты</a></div>
+                    <ul>
+                        <li><a href="{{pathFor route='special'}}">Все специальные тесты</a></li>
+                        <li><a href="#">Математика</a></li>
+                        <li><a href="#">География</a></li>
+                        <li><a href="#">Искусство</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="{{pathFor route='gallery'}}">Галерея</a></li>
+              <li><a href="{{pathFor route='contacts'}}">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <div class="page__slider slider slider-1">
+        <div class="slider-screen">
+            <div class="slide" style="background-image: url(http://s1.vcdn.biz/static/f/947693041/image.jpg);"></div>
+            <div class="slide" style="background-image: url(http://s1.vcdn.biz/static/f/947693721/image.jpg);"></div>
+            <div class="slide" style="background-image: url(http://s1.vcdn.biz/static/f/947693981/image.jpg);"></div>
+            <div class="slide" style="background-image: url(http://s1.vcdn.biz/static/f/947694141/image.jpg);"></div>
+        </div>
+        <a class="slider-screen__button next-slide"></a>
+        <a class="slider-screen__button prev-slide"></a>
+    </div>
+
+    {{> breadcrumb}}
+
+    <div class="page__content">
+        {{> yield}}
+    </div>
+
+  </div>
+</div>
+
+</template>

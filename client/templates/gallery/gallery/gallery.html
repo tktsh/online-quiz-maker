@@ -1,0 +1,18 @@
+<template name="galleryTemplate">
+	<h1>Галерея</h1>
+	<div class="images-container">
+		{{#each galleryItems}}
+			{{> galleryItem}}
+		{{/each}}
+	</div>
+	<div class="modal-bg-cover"></div>
+	<div class="galleryModal">
+		<div class="galleryModal__image"></div>
+		<div class="galleryModal__additions modal-additions">
+			<div class="modal-additions__prev"></div>
+			<div class="modal-additions__description"></div>
+			<div class="modal-additions__next"></div>
+		</div>
+		<div class="galleryModal__close">×</div>
+	</div>
+</template>

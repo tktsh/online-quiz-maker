@@ -1,0 +1,49 @@
+<template name="contactsTemplate">
+	<h1>Контакты</h1>
+
+	<p class="contacts-info">
+		Главный офис:<br>
+		ул. Шота Руставелли, 46<br>
+		01023 Киев, Украина<br>
+		Тел.: +380-44-390-5457<br>
+		Факс: +380-44-390-0861
+	</p>
+
+	<div class="contacts-map">
+		<div id="map"></div>
+	</div>
+
+    <script>
+
+    if( $('#map').is(':empty') ){
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: 50.434771,
+                    lng: 30.517662
+                },
+                zoom: 13,
+                streetViewControl: false,
+                scrollwheel: false,
+                navigationControl: false,
+                mapTypeControl: false,
+                scaleControl: false,
+                draggable: false
+            });
+
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: 50.434771,
+                    lng: 30.517662
+                },
+                title: 'ул. Шота Руставелли 46'
+            });
+
+            marker.setMap(map);
+        }
+    }
+
+    </script>
+    <script async defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLwRcFUmwseWAuH32l9y0CV0DoVh0yxRQ&callback=initMap"></script>
+</template>

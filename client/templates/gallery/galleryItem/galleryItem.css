@@ -1,0 +1,25 @@
+/* gallery */
+
+.image-box{
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 20px 20px 0;
+}
+
+.image-box__img{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+}
+
+.image-box__cover{
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+}
+
+/**/

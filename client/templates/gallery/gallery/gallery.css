@@ -1,0 +1,121 @@
+/* gallery */
+
+.images-container{
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
+.galleryModal{
+    position: fixed;
+    top: 10vh;
+    left: 10vw;
+    height: 80vh;
+    width: 80vw;
+    background-color: #fff;
+    outline: 2px solid #333;
+    padding: 50px 50px 0px 50px;
+    box-sizing: border-box;
+    display: none;
+    z-index: 201;
+}
+
+.galleryModal__image{
+    height: -webkit-calc(100% - 100px);
+    height: calc(100% - 100px);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.galleryModal__additions{
+    height: 100px;
+    width: 100%;}
+
+.modal-additions{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.modal-additions__prev, .modal-additions__next{
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50px;
+        -ms-flex: 0 0 50px;
+            flex: 0 0 50px;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"> <polyline fill="none" stroke="#333" stroke-width="5" stroke-miterlimit="10" points="35,10 75.667,50 35,90 "/> <line display="none" fill="#none" stroke="#333" stroke-miterlimit="10" x1="35" y1="90" x2="35" y2="10"/> </svg>');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    cursor: pointer;
+}
+
+.modal-additions__prev{
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.modal-additions__prev:hover, .modal-additions__next:hover{
+	background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"> <polyline fill="none" stroke="hotpink" stroke-width="5" stroke-miterlimit="10" points="35,10 75.667,50 35,90 "/> <line display="none" fill="#none" stroke="hotpink" stroke-miterlimit="10" x1="35" y1="90" x2="35" y2="10"/> </svg>');
+}
+
+.modal-additions__prev_inactive, .modal-additions__next_inactive{
+	opacity: 0.2;
+	cursor: default;
+}
+
+.modal-additions__prev_inactive:hover, .modal-additions__next_inactive:hover{
+	background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"> <polyline fill="none" stroke="#333" stroke-width="5" stroke-miterlimit="10" points="35,10 75.667,50 35,90 "/> <line display="none" fill="#none" stroke="#333" stroke-miterlimit="10" x1="35" y1="90" x2="35" y2="10"/> </svg>');
+}
+
+.modal-additions__description{
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: center;
+    font-weight: 600;
+}
+
+.galleryModal__close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.galleryModal__close:hover{
+    color: hotpink;
+}
+
+.modal-bg-cover{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(100,100,100,.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 200;
+}
+
+/**/
