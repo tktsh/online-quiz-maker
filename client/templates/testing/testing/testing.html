@@ -4,15 +4,46 @@
         <ul>
             <li class="filters-drop-down filters-drop-down_closed"><div class="filters-drop-down__label">Название</div>
                 <div class="filters-drop-down__content">
-                    <p style="height: 150px;"></p>
+                    <p style="height: 150px;">test 1</p>
                 </div>
             </li>
             <li class="filters-drop-down filters-drop-down_closed"><div class="filters-drop-down__label">Категория</div>
                 <div class="filters-drop-down__content">
-                    <p style="height: 150px;"></p>
+                    <p style="height: 150px;">test 2</p>
                 </div>
             </li>
         </ul>
     </div>
-    <div style="height: 450px;"></div>
+    <div style="height: 450px;">
+        <ul>
+        {{#each testItems}}
+            {{> testItem}}
+        {{/each}}
+        </ul>
+    </div>
+</template>
+
+<template name="testItem">
+    <p>{{description}}</p>
+    <ul>
+        {{#each questions}}
+            <li>
+            {{this.text}}
+                <ul>
+                    {{#each this.variants}}
+                        <li>
+                            <label>
+                            {{#if this.answer}}
+                                <input type="{{../type}}" name="{{../index}}" value="{{this.value}}" checked>
+                            {{else}}
+                                <input type="{{../type}}" name="{{../index}}" value="{{this.value}}">
+                            {{/if}}
+                                {{this.value}}
+                            </label>
+                        </li>
+                    {{/each}}
+                </ul> 
+            </li>
+        {{/each}}
+    </ul>
 </template>
