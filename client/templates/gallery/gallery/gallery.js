@@ -106,7 +106,21 @@ galleryHelpers = {
 	},
 
 	renderItem: function(item){
-		$('.galleryModal__image').css('background-image', 'url(' + item.full + ')');
+		//$('.galleryModal__image').css('background-image', 'url(' + item.full + ')');
+
+		var imageFull = new Image();
+		imageFull.src = item.full;
+
+		//$('.galleryModal__image').css('opacity','0');
+
+		$(imageFull).load(function(){
+			$('.galleryModal__image').css('background-image', 'url('+ $(this).attr("src") + ')');
+			/*$( '.galleryModal__image' ).animate({
+				opacity: '1'
+			}, 300);*/
+		}); 
+
+
 		$('.modal-additions__description').html(item.description);
 
 		if (item.prev){
@@ -131,7 +145,19 @@ Template.galleryTemplate.onCreated(function(){});
 Template.galleryTemplate.helpers(galleryHelpers);
 Template.galleryTemplate.events({
 	'click .image-box': function(e, tmpl){
-		$('.galleryModal__image').css('background-image', 'url(' + this.full + ')');
+
+		var imageFull = new Image();
+		imageFull.src = this.full;
+
+		//$('.galleryModal__image').css('opacity','0');
+
+		$(imageFull).load(function(){
+			$('.galleryModal__image').css('background-image', 'url('+ $(this).attr("src") + ')');
+			/*$( '.galleryModal__image' ).animate({
+				opacity: '1'
+			}, 300);*/
+		}); 
+
 		$('.modal-additions__description').html(this.description);
 
 		if (this.prev){
@@ -157,13 +183,17 @@ Template.galleryTemplate.events({
 	},
 
 	'click .modal-additions__prev': function(e, tmpl){
-		var newID = $('.modal-additions__prev').data('prev-id');
-		galleryHelpers.getNewGalleryItem(newID);
+		if (!$(e.target).hasClass('modal-additions__prev_inactive')){
+			var newID = $('.modal-additions__prev').data('prev-id');
+			galleryHelpers.getNewGalleryItem(newID);
+		}
 	},
 
 	'click .modal-additions__next': function(e, tmpl){
-		var newID = $('.modal-additions__next').data('next-id');
-		galleryHelpers.getNewGalleryItem(newID);
+		if (!$(e.target).hasClass('modal-additions__next_inactive')){
+			var newID = $('.modal-additions__next').data('next-id');
+			galleryHelpers.getNewGalleryItem(newID);
+		}
 	},
 
 	'click .galleryModal__close': function(e, tmpl){
