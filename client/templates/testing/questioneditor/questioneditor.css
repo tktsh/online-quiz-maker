@@ -1,0 +1,76 @@
+
+.createNewQuestionForm > *{
+	display: block;
+	margin: 7px;
+	padding: 4px;
+}
+
+.createNewQuestionForm__subject{
+
+}
+
+.createNewQuestionForm__label{
+
+}
+
+.createNewQuestionForm__textarea{
+	width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.createNewQuestionForm__questionTypeGroup{
+	display: inline-block;
+}
+
+.deleteQuestion{
+	display: inline-block;
+	background-color: lightblue;
+	cursor: pointer;
+}
+
+.createNewQuestionForm input[type="radio"], .createNewQuestionForm input[type="checkbox"]{
+	margin-right: 5px;
+}
+
+.createNewQuestionForm__newVariant{
+	padding-left: 25px;
+	position: relative;
+	cursor: pointer;
+}
+
+.createNewQuestionForm__newVariant:before{
+	content: "+";
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	color: green;
+	font-weight: bold;
+}
+
+.createNewQuestionForm___variants{
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.answer_variant{
+	margin: 2px 20px 2px 0;
+	display: flex;
+}
+
+.answer_variant__text{
+
+}
+
+.answer_variant__delete{
+	color: red;
+	cursor: pointer;
+	margin-left: 5px;
+	display: none;
+}
+
+.answer_variant__delete:hover{
+	color: #cc0000;
+}

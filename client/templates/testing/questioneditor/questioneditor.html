@@ -1,0 +1,43 @@
+<template name="questionsEditorTemplate">
+	<h1>Конструктор вопросов</h1>
+
+	<form class="createNewQuestionForm">
+		<p class="createNewQuestionForm__label">Тема вопроса:</p>
+		<select class="createNewQuestionForm__subject" name="questionSubject">
+		{{#each cHelpers.testSubjects}}
+			<option value="{{this}}">{{this}}</option>
+		{{/each}}
+		</select>
+		<p class="createNewQuestionForm__label">Текст вопроса:</p>
+		<textarea class="createNewQuestionForm__textarea" name="questionArea" placeholder="..."></textarea>
+		<p class="createNewQuestionForm__label">Количество правильных ответов:</p>
+		<label class="createNewQuestionForm__questionTypeGroup"><input type="radio" name="questionTypeGroup" value="radio" checked>Один</label>
+		<label class="createNewQuestionForm__questionTypeGroup"><input type="radio" name="questionTypeGroup" value="checkbox">Несколько</label>
+		<p class="createNewQuestionForm__label">Варианты ответов:</p>
+		<span class="createNewQuestionForm__newVariant">Добавить вариант ответа</span>
+		<ul class='createNewQuestionForm___variants'>
+			<li class='answer_variant'>
+				<input type="checkbox" name="correctAnswersGroup" checked>
+				<input type="answer_variant__text" name="answerVariant" placeholder="Вариант ответа ...">
+				<div class="answer_variant__delete">✖</div>
+			</li>
+			<li class='answer_variant'>
+				<input type="checkbox" name="correctAnswersGroup">
+				<input type="answer_variant__text" name="answerVariant" placeholder="Вариант ответа ...">
+				<div class="answer_variant__delete">✖</div>
+			</li>
+		</ul>
+		<input type="submit" class="createNewQuestionForm__submit" value="Готово">
+	</form>
+
+	<h2>Готовые вопросы</h2>
+	<ul>
+		{{#each questionItems}}
+			<li>{{> questionsEditorTemplate__question}}</li>
+		{{/each}}
+	</ul>
+</template>
+
+<template name="questionsEditorTemplate__question">
+	<span>{{this.text}} ({{this.subject}}) </span><div class="deleteQuestion">delete</div>
+</template>

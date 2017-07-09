@@ -23,7 +23,9 @@
           <li class="{{#if isActiveRoute 'testing'}}active-menu-item{{/if}}"><a href="{{pathFor route='testing'}}">Тесты</a>
             <ul>
                 <li><a href="{{pathFor route='testing'}}">Все тесты</a></li>
-                <li><a href="{{pathFor route='editor'}}">Конструктор тестов</a></li>
+                <li><a href="{{pathFor route='testeditor'}}">Конструктор тестов</a></li>
+                <li><a href="{{pathFor route='questions'}}">Вопросы для тестов</a></li>
+                <li><a href="{{pathFor route='questioneditor'}}">Конструктор вопросов</a></li>
                 <li><a href="{{pathFor route='special'}}">Специальные тесты</a>
                     <ul>
                         <li><a href="#">Математика</a></li>
@@ -59,7 +61,9 @@
             <li class="menu-drop-down menu-drop-down_closed"><div class="menu-drop-down__btn"><a href="#">Тесты</a></div>
                 <ul>
                   <li><a href="{{pathFor route='testing'}}">Все тесты</a></li>
-                  <li><a href="{{pathFor route='editor'}}">Конструктор тестов</a></li>
+                  <li><a href="{{pathFor route='testeditor'}}">Конструктор тестов</a></li>
+                  <li><a href="{{pathFor route='questions'}}">Вопросы для тестов</a></li>
+                  <li><a href="{{pathFor route='questioneditor'}}">Конструктор вопросов</a></li>
                   <li class="menu-drop-down menu-drop-down_closed"><div class="menu-drop-down__btn"><a href="#">Специальные тесты</a></div>
                     <ul>
                         <li><a href="{{pathFor route='special'}}">Все специальные тесты</a></li>

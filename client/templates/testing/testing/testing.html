@@ -14,36 +14,46 @@
             </li>
         </ul>
     </div>
-    <div style="height: 450px;">
-        <ul>
+
+    <form class="createNewTestForm">
+        <input type="text" name="title" placeholder="newtestname">
+        <input type="submit" class="createNewTestForm__submit" value="Create">
+    </form>
+
+    <ul>
         {{#each testItems}}
-            {{> testItem}}
+            <li>{{> testItem}}</li>
         {{/each}}
-        </ul>
-    </div>
+    </ul>
+      
 </template>
 
 <template name="testItem">
-    <p>{{description}}</p>
-    <ul>
-        {{#each questions}}
-            <li>
-            {{this.text}}
-                <ul>
-                    {{#each this.variants}}
-                        <li>
-                            <label>
-                            {{#if this.answer}}
-                                <input type="{{../type}}" name="{{../index}}" value="{{this.value}}" checked>
-                            {{else}}
-                                <input type="{{../type}}" name="{{../index}}" value="{{this.value}}">
-                            {{/if}}
-                                {{this.value}}
-                            </label>
-                        </li>
-                    {{/each}}
-                </ul> 
-            </li>
-        {{/each}}
-    </ul>
+    <li>
+        <span class="testItem">{{description}}</span>
+        <input class="deleteTestItem" type="button" value="delete"><br>
+        <input class="addQuestion" type="button" value="create question">
+        <ul>
+            {{#each questions}}
+                <li>
+                {{this.index}}. {{this.text}}
+                <input class="deleteQuestion" type="button" value="delete">
+                    <ul>
+                        {{#each this.variants}}
+                            <li>
+                                <label>
+                                {{#if this.answer}}
+                                    <input type="{{../type}}" name="{{../index}}" value="{{this.value}}" checked>
+                                {{else}}
+                                    <input type="{{../type}}" name="{{../index}}" value="{{this.value}}">
+                                {{/if}}
+                                    {{this.value}}
+                                </label>
+                            </li>
+                        {{/each}}
+                    </ul> 
+                </li>
+            {{/each}}
+        </ul>
+    </li>
 </template>

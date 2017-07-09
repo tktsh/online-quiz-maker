@@ -1,5 +1,6 @@
+
 testingHelpers = {
-	testItems: [
+	/*testItems: [
 		{
 			author: '000001',
 			subject: '000001',
@@ -45,7 +46,10 @@ testingHelpers = {
 				},
 			]
 		}
-	]
+	],*/
+	testItems: function(){
+		return TestItems.find();
+	},
 }
 
 Template.testingTemplate.onCreated(function(){});
@@ -64,6 +68,27 @@ Template.testingTemplate.events({
 		}
 	},
 	'click .filters-drop-down__content': function(e){
-		
+		console.log('');
+	},
+	'submit .createNewTestForm': function(e){
+		var description = e.target.title.value;
+		TestItems.insert({description: description});
+		e.target.title.value = "";
+		return false;
+	},
+	'click .deleteTestItem': function(e){
+		TestItems.remove(this._id);
+	},
+	'click .addQuestion': function(e){
+		//var newID = new Meteor.Collection.ObjectID();
+		TestItems.update({_id: this._id}, {$push: {questions: {_id: newID._str, text: 'test'} }});
+	},
+	'click .deleteQuestion': function(e){
+		console.log(this);
+		// TestItems.update({_id: ""}, {$unset: { questions : "" } } );
+	},
+	'click .testItem': function(e, template){
+		console.log(this);
+		console.log(template.view);
 	}
 });
