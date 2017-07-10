@@ -15,9 +15,11 @@
 
 .createNewQuestionForm__textarea{
 	width: 100%;
+	max-width: 100%;
     height: 150px;
     box-sizing: border-box;
     padding: 10px;
+    margin: 0;
 }
 
 .createNewQuestionForm__questionTypeGroup{

@@ -79,16 +79,4 @@ Template.testingTemplate.events({
 	'click .deleteTestItem': function(e){
 		TestItems.remove(this._id);
 	},
-	'click .addQuestion': function(e){
-		//var newID = new Meteor.Collection.ObjectID();
-		TestItems.update({_id: this._id}, {$push: {questions: {_id: newID._str, text: 'test'} }});
-	},
-	'click .deleteQuestion': function(e){
-		console.log(this);
-		// TestItems.update({_id: ""}, {$unset: { questions : "" } } );
-	},
-	'click .testItem': function(e, template){
-		console.log(this);
-		console.log(template.view);
-	}
 });

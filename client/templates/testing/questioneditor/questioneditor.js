@@ -61,6 +61,7 @@ Template.questionsEditorTemplate.events({
 
 		QuestionItems.insert(item);
 		e.target.questionArea.value = "";
+		// TODO: clean variant fields;
 		return false;
 	},
 	'click .deleteQuestion': function(e){

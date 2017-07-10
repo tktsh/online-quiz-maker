@@ -1,4 +1,32 @@
 <template name="testEditorTemplate">
-	<h1>testEditorTemplate</h1>
+	<h1>Конструктор тестов</h1>
 
+	<form class="createNewTestForm">
+		<p class="createNewTestForm__label">Тема теста:</p>
+		<select class="createNewTestForm__subject" name="testSubject">
+		{{#each cHelpers.testSubjects}}
+			<option value="{{this}}">{{this}}</option>
+		{{/each}}
+		</select>
+		<p class="createNewTestForm__label">Название теста:</p>
+		<input class="createNewTestForm__name" name="testName" placeholder="...">
+
+		<p class="createNewTestForm_label">Время для прохождения теста (от 1 минуты до 4-х часов):</p>
+		<label><input type="number" size="3" min="1" max="240" value="15" name="testTime">мин.</label>
+		<p class="createNewTestForm__label">Вопросы для теста:</p>
+		<div class="createNewTestForm__questionListContainer">
+			<ul class="createNewTestForm__questionList">
+				{{#each questionItems}}
+					{{> testEditorTemplate__question}}
+				{{/each}}
+			</ul>
+		</div>
+		<input type="submit" class="createNewTestForm__submit" value="Готово">
+	</form>
+</template>
+
+<template name="testEditorTemplate__question">
+	<li data-subject="{{this.subject}}" class="createNewTestForm__question">
+		<label><input type="checkbox" data-id="{{this._id}}" name="questionVariant">{{this.text}} ({{this.subject}})</label>
+	</li>
 </template>

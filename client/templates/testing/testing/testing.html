@@ -30,14 +30,12 @@
 
 <template name="testItem">
     <li>
-        <span class="testItem">{{description}}</span>
+        <span class="testItem">{{name}}</span>
         <input class="deleteTestItem" type="button" value="delete"><br>
-        <input class="addQuestion" type="button" value="create question">
         <ul>
             {{#each questions}}
                 <li>
-                {{this.index}}. {{this.text}}
-                <input class="deleteQuestion" type="button" value="delete">
+                {{this.index}}
                     <ul>
                         {{#each this.variants}}
                             <li>

@@ -1,0 +1,27 @@
+
+.createNewTestForm > *{
+	display: block;
+	margin: 7px;
+	padding: 4px;
+}
+
+.createNewTestForm__questionListContainer{
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	min-height: 100px;
+	padding: 10px;
+	margin: 0;
+}
+
+.createNewTestForm__questionList{
+	list-style: none;
+}
+
+.createNewTestForm__question{
+	display: none;
+}
+
+.createNewTestForm__question_currentSubject{
+	display: block;
+}
