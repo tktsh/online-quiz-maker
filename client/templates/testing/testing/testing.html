@@ -31,6 +31,7 @@
 <template name="testItem">
     <li>
         <span class="testItem">{{name}}</span>
+        <a href="{{pathFor route='quiz'}}">Пройти тест</a>
         <input class="deleteTestItem" type="button" value="delete"><br>
         <ul>
             {{#each questions}}

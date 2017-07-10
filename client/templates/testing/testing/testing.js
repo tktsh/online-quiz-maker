@@ -1,52 +1,5 @@
 
 testingHelpers = {
-	/*testItems: [
-		{
-			author: '000001',
-			subject: '000001',
-			description: 'Basic math test for students of primary school.',
-			questions: [
-				{
-					index: '1',
-					type: 'radio',
-					text: '2 + 2 = ',
-					variants: [
-						{
-							value: '3',
-							answer: false
-						},
-						{
-							value: '5',
-							answer: false
-						},
-						{
-							value: '4',
-							answer: true
-						},
-					],
-				},
-				{
-					index: '2',
-					type: 'checkbox',
-					text: '9 is result of:',
-					variants: [
-						{
-							value: '3 * 3',
-							answer: true
-						},
-						{
-							value: '12 - 3',
-							answer: true
-						},
-						{
-							value: '17 - 9',
-							answer: false
-						},
-					],
-				},
-			]
-		}
-	],*/
 	testItems: function(){
 		return TestItems.find();
 	},
