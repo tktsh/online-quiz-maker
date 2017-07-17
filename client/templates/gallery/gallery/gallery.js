@@ -4,7 +4,8 @@ galleryHelpers = {
 			id: "001",
 			next: "002",
 			img: 'http://s1.vcdn.biz/static/f/947737231/image.jpg',
-			full: 'http://s1.vcdn.biz/static/f/947730881/image.jpg',
+			full: 'http://s1.vcdn.biz/static/f/977348421/image.jpg',
+			max: 'http://s1.vcdn.biz/static/f/947730881/image.jpg',
 			description: 'Подготовка к государственным экзаменам'
 		},
 		{
@@ -12,7 +13,8 @@ galleryHelpers = {
 			prev: "001",
 			next: "003",
 			img: 'http://s1.vcdn.biz/static/f/947737031/image.jpg',
-			full: 'http://s1.vcdn.biz/static/f/947731731/image.jpg',
+			full: 'http://s1.vcdn.biz/static/f/977348901/image.jpg',
+			max: 'http://s1.vcdn.biz/static/f/947731731/image.jpg',
 			description: 'Обучение на природе'
 		},
 		{
@@ -20,7 +22,8 @@ galleryHelpers = {
 			prev: "002",
 			next: "004",
 			img: 'http://s1.vcdn.biz/static/f/947737391/image.jpg',
-			full: 'http://s1.vcdn.biz/static/f/947732111/image.jpg',
+			full: 'http://s1.vcdn.biz/static/f/977349331/image.jpg',
+			max: 'http://s1.vcdn.biz/static/f/947732111/image.jpg',
 			description: 'И даже с книги у моря'
 		},
 		{
@@ -28,7 +31,8 @@ galleryHelpers = {
 			prev: "003",
 			next: "005",
 			img: 'http://s1.vcdn.biz/static/f/947737561/image.jpg',
-			full: 'http://s1.vcdn.biz/static/f/947732371/image.jpg',
+			full: 'http://s1.vcdn.biz/static/f/977350171/image.jpg',
+			max: 'http://s1.vcdn.biz/static/f/947732371/image.jpg',
 			description: 'Школа в Африке'
 		},
 		{
@@ -36,7 +40,8 @@ galleryHelpers = {
 			prev: "004",
 			next: "006",
 			img: 'http://s1.vcdn.biz/static/f/947737751/image.jpg',
-			full: 'http://s1.vcdn.biz/static/f/947732631/image.jpg',
+			full: 'http://s1.vcdn.biz/static/f/977351471/image.jpg',
+			max: 'http://s1.vcdn.biz/static/f/947732631/image.jpg',
 			description: 'Выпускники ВУЗ Соединенных Штатов'
 		},
 		{
@@ -44,7 +49,8 @@ galleryHelpers = {
 			prev: "005",
 			next: "007",
 			img: 'http://s1.vcdn.biz/static/f/947738001/image.jpg',
-			full: 'http://s1.vcdn.biz/static/f/947733101/image.jpg',
+			full: 'http://s1.vcdn.biz/static/f/977351961/image.jpg',
+			max: 'http://s1.vcdn.biz/static/f/947733101/image.jpg',
 			description: 'Жесткие меры контроля'
 		},
 		{
@@ -52,7 +58,8 @@ galleryHelpers = {
 			prev: "006",
 			next: "008",
 			img: 'http://s1.vcdn.biz/static/f/947738931/image.jpg',
-			full: 'http://s1.vcdn.biz/static/f/947733401/image.jpg',
+			full: 'http://s1.vcdn.biz/static/f/977352381/image.jpg',
+			max: 'http://s1.vcdn.biz/static/f/947733401/image.jpg',
 			description: 'Дистанционное образование из коворкинга'
 		},
 		{
@@ -60,7 +67,8 @@ galleryHelpers = {
 			prev: "007",
 			next: "009",
 			img: 'http://s1.vcdn.biz/static/f/947739071/image.jpg',
-			full: 'http://s1.vcdn.biz/static/f/947733771/image.jpg',
+			full: 'http://s1.vcdn.biz/static/f/977352861/image.jpg',
+			max: 'http://s1.vcdn.biz/static/f/947733771/image.jpg',
 			description: 'Дистанционное образование из дома'
 		},
 		{
@@ -68,7 +76,8 @@ galleryHelpers = {
 			prev: "008",
 			next: "010",
 			img: 'http://s1.vcdn.biz/static/f/947739331/image.jpg',
-			full: 'http://s1.vcdn.biz/static/f/947734221/image.jpg',
+			full: 'http://s1.vcdn.biz/static/f/977353491/image.jpg',
+			max: 'http://s1.vcdn.biz/static/f/947734221/image.jpg',
 			description: 'Уроки для самых маленьких'
 		},
 		{
@@ -76,7 +85,8 @@ galleryHelpers = {
 			prev: "009",
 			next: "011",
 			img: 'http://s1.vcdn.biz/static/f/947737231/image.jpg',
-			full: 'http://s1.vcdn.biz/static/f/947730881/image.jpg',
+			full: 'http://s1.vcdn.biz/static/f/977348421/image.jpg',
+			max: 'http://s1.vcdn.biz/static/f/947730881/image.jpg',
 			description: 'Подготовка к государственным экзаменам'
 		},
 		{
@@ -84,14 +94,16 @@ galleryHelpers = {
 			prev: "010",
 			next: "012",
 			img: 'http://s1.vcdn.biz/static/f/947737031/image.jpg',
-			full: 'http://s1.vcdn.biz/static/f/947731731/image.jpg',
+			full: 'http://s1.vcdn.biz/static/f/977348901/image.jpg',
+			max: 'http://s1.vcdn.biz/static/f/947731731/image.jpg',
 			description: 'Обучение на природе'
 		},
 		{
 			id: "012",
 			prev: "011",
 			img: 'http://s1.vcdn.biz/static/f/947737391/image.jpg',
-			full: 'http://s1.vcdn.biz/static/f/947732111/image.jpg',
+			full: 'http://s1.vcdn.biz/static/f/977349331/image.jpg',
+			max: 'http://s1.vcdn.biz/static/f/947732111/image.jpg',
 			description: 'И даже с книги у моря'
 		},
 	],
@@ -115,9 +127,9 @@ galleryHelpers = {
 
 		$(imageFull).load(function(){
 			$('.galleryModal__image').css('background-image', 'url('+ $(this).attr("src") + ')');
-			/*$( '.galleryModal__image' ).animate({
+			/* $( '.galleryModal__image' ).animate({
 				opacity: '1'
-			}, 300);*/
+			}, 300); */
 		}); 
 
 

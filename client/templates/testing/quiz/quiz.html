@@ -1,4 +1,50 @@
 <template name="quizTemplate">
-	<h1>Прохождение теста</h1>
-	<span>{{name}}</span>
+	<h1 class="quizTemplate__header">Прохождение теста</h1>
+	<div class="countdown"></div>
+	<p class="quiz-subheader">Тест: <span class="quiz-subheader__name">{{name}}</span></p>
+	<div class="test-block">
+		<div class="question-block__start">
+			<div class="question-block__start-btn">Начать тест</div>
+		</div>
+		<div class="question-block__content">
+			<p class="question-block__index question-index">Вопрос <span class="question-index__current">1</span> / <span class="question-index__max">{{questionItems.length}}</span></p>
+			<form class="quizAnswersForm">
+			{{#each questionItems}}
+				{{> quizTemplate__question}}
+			{{/each}}
+				<button class="quizAnswersForm_submit" type="submit"></button> 
+			</form>
+			<div class="test-block__nav">
+				<div class="test-nav-btn test-nav-btn__prev test-nav-btn__prev_disable">Назад</div>
+				<div class="test-nav-btn test-nav-btn__next">Вперед</div>
+				<div class="test-nav-btn test-nav-btn__send">Готово</div>
+			</div>
+		</div>
+		<div class="question-block__end">
+			<div class="question-block__end-text">Начать тест</div>
+		</div>
+	</div>
+</template>
+
+<template name="quizTemplate__question">
+	<div class="question-block" data-index="{{index}}">
+		<p class="question-block__text">{{this.text}}</p>
+		{{#if equals this.type "radio"}}
+			<ul class="question-block__variants">
+				{{#each this.variants}}
+				<li class='answer_variant'>
+					<label><input type="radio" name="question{{../index}}" value="{{this.text}}">{{this.text}}</label>
+				</li>
+				{{/each}}
+			</ul>
+		{{else}}
+			<ul class="question-block__variants">
+				{{#each this.variants}}
+				<li class='answer_variant'>
+					<label><input type="checkbox" name="question{{../index}}" value="{{this.text}}">{{this.text}}</label>
+				</li>
+				{{/each}}
+			</ul>
+		{{/if}}
+	</div>
 </template>

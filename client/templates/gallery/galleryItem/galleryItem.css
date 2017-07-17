@@ -6,6 +6,7 @@
     overflow: hidden;
     position: relative;
     margin: 0 20px 20px 0;
+    background-color: lightgrey;
 }
 
 .image-box__img{

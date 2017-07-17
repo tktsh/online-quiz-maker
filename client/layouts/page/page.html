@@ -82,16 +82,18 @@
   </div>
 
   <div class="page">
-
-    <div class="page__slider slider slider-1">
-        <div class="slider-screen">
-            <div class="slide" style="background-image: url(http://s1.vcdn.biz/static/f/947693041/image.jpg);"></div>
-            <div class="slide" style="background-image: url(http://s1.vcdn.biz/static/f/947693721/image.jpg);"></div>
-            <div class="slide" style="background-image: url(http://s1.vcdn.biz/static/f/947693981/image.jpg);"></div>
-            <div class="slide" style="background-image: url(http://s1.vcdn.biz/static/f/947694141/image.jpg);"></div>
-        </div>
-        <a class="slider-screen__button next-slide"></a>
-        <a class="slider-screen__button prev-slide"></a>
+    <div class="slider-container">
+      <div class="page__slider slider slider-1 page__slider_visible">
+          <div class="slider-screen">
+              <div class="slide" style="background-image: url(http://s1.vcdn.biz/static/f/947693041/image.jpg);"></div>
+              <div class="slide" style="background-image: url(http://s1.vcdn.biz/static/f/947693721/image.jpg);"></div>
+              <div class="slide" style="background-image: url(http://s1.vcdn.biz/static/f/947693981/image.jpg);"></div>
+              <div class="slide" style="background-image: url(http://s1.vcdn.biz/static/f/947694141/image.jpg);"></div>
+          </div>
+          <a class="slider-screen__button next-slide"></a>
+          <a class="slider-screen__button prev-slide"></a>
+      </div>
+      <div class="slider__display-btn"></div>
     </div>
 
     {{> breadcrumb}}

@@ -30,10 +30,10 @@
 		<input type="submit" class="createNewQuestionForm__submit" value="Готово">
 	</form>
 
-	<h2>Готовые вопросы</h2>
-	<ul>
+	<h2 class="questionsEditor__subtitle">Готовые вопросы</h2>
+	<ul class="questionsList">
 		{{#each questionItems}}
-			<li>{{> questionsEditorTemplate__question}}</li>
+			<li class="questionItem">{{> questionsEditorTemplate__question}}</li>
 		{{/each}}
 	</ul>
 </template>

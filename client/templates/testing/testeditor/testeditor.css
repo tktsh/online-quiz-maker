@@ -20,6 +20,11 @@
 
 .createNewTestForm__question{
 	display: none;
+	margin: 10px;
+}
+
+.createNewTestForm__question input{
+	margin-right: 5px;
 }
 
 .createNewTestForm__question_currentSubject{

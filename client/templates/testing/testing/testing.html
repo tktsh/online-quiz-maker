@@ -4,55 +4,47 @@
         <ul>
             <li class="filters-drop-down filters-drop-down_closed"><div class="filters-drop-down__label">Название</div>
                 <div class="filters-drop-down__content">
-                    <p style="height: 150px;">test 1</p>
+                    <form class="nameForm">
+                        <p class="nameForm__part"><label>Сортировать</label></p>
+                        <p class="nameForm__part"><select name="sort">
+                            <option value="az" selected>А - Я</option>
+                            <option value="za">Я - А</option>
+                        </select></p>
+                    </form> 
                 </div>
             </li>
             <li class="filters-drop-down filters-drop-down_closed"><div class="filters-drop-down__label">Категория</div>
                 <div class="filters-drop-down__content">
-                    <p style="height: 150px;">test 2</p>
+                    <form class="categoryForm">
+                        <p class="categoryForm__part"><label>Сортировать</label></p>
+                        <p class="categoryForm__part"><select name="sort">
+                            <option value="az" selected>А - Я</option>
+                            <option value="za">Я - А</option>
+                        </select></p>
+                        <div class="categoryForm__part categoryForm__options">
+                            {{#each cHelpers.testSubjects}}
+                                <p><label><input class="subject_options" type="checkbox" name="subject-options" data-value="{{this}}" checked>{{this}}</label></p>
+                            {{/each}}
+                        </div>
+                    </form>
                 </div>
             </li>
         </ul>
     </div>
 
-    <form class="createNewTestForm">
-        <input type="text" name="title" placeholder="newtestname">
-        <input type="submit" class="createNewTestForm__submit" value="Create">
-    </form>
-
-    <ul>
+    <ul class="testItems">
         {{#each testItems}}
-            <li>{{> testItem}}</li>
+            {{> testItem}}
         {{/each}}
     </ul>
       
 </template>
 
 <template name="testItem">
-    <li>
-        <span class="testItem">{{name}}</span>
-        <a href="{{pathFor route='quiz'}}">Пройти тест</a>
-        <input class="deleteTestItem" type="button" value="delete"><br>
-        <ul>
-            {{#each questions}}
-                <li>
-                {{this.index}}
-                    <ul>
-                        {{#each this.variants}}
-                            <li>
-                                <label>
-                                {{#if this.answer}}
-                                    <input type="{{../type}}" name="{{../index}}" value="{{this.value}}" checked>
-                                {{else}}
-                                    <input type="{{../type}}" name="{{../index}}" value="{{this.value}}">
-                                {{/if}}
-                                    {{this.value}}
-                                </label>
-                            </li>
-                        {{/each}}
-                    </ul> 
-                </li>
-            {{/each}}
-        </ul>
+    <li class="testItem" data-subject="{{subject}}">
+        <span class="testItem__name">{{name}}</span>
+        <span class="testItem__question_count">({{questions.length}} вопр.)</span>
+        <a class="testItem__link" href="{{pathFor route='quiz'}}">Пройти тест</a>
+        <span class="deleteTestItem">✖</span>
     </li>
 </template>

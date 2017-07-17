@@ -6,7 +6,7 @@ Template.pageLayout.onCreated(function bodyOnCreated(){
 		this.selector = selector;
 		this.slideCount = 0;
 		this.slideTime = slideTime ? slideTime : 3500;
-		this.slideInterval = setInterval(function() {
+		this.slideInterval = new Timer(function() {
 			self.next();
 		}, this.slideTime);
 		this.next = function(n){
@@ -31,10 +31,36 @@ Template.pageLayout.onCreated(function bodyOnCreated(){
 		this.init();
 	}
 
+	function Timer(fn, t) {
+		var timerObj = setInterval(fn, t);
+
+		this.stop = function() {
+			if (timerObj) {
+				clearInterval(timerObj);
+				timerObj = null;
+			}
+			return this;
+		}
+
+		this.start = function() {
+			if (!timerObj) {
+				this.stop();
+				timerObj = setInterval(fn, t);
+			}
+			return this;
+		}
+
+		this.reset = function(newT) {
+			t = newT;
+			return this.stop().start();
+		}
+	}
+
 	// Initialization of slider with .slider-1 selector and set 5s interval for slides:
-	var slider = new Slider('.slider-1', 5000);
+	slider = new Slider('.slider-1', 5000);
 
 });
+
 
 Template.pageLayout.events({
 	'click .sidebar': function(e){
@@ -51,7 +77,15 @@ Template.pageLayout.events({
 	},
 	'click .menu-drop-down__btn': function(e){
 		$(e.target).closest('li').toggleClass('menu-drop-down_closed');
-	}
+	},
+	'click .slider__display-btn': function(e){
+		$('.page__slider').toggleClass('page__slider_visible');
+		if ($('.page__slider').hasClass('page__slider_visible')){
+			slider.slideInterval.start();
+		}else{
+			slider.slideInterval.stop();
+		}
+	},
 });
 
 

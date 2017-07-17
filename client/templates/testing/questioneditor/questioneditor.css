@@ -1,3 +1,10 @@
+.createNewQuestionForm{
+	margin-bottom: 50px;
+}
+
+.questionsEditor__subtitle{
+	margin: 20px 10px;
+}
 
 .createNewQuestionForm > *{
 	display: block;
@@ -75,4 +82,18 @@
 
 .answer_variant__delete:hover{
 	color: #cc0000;
+}
+
+.questionsList{
+	list-style: none;
+}
+
+.questionItem{
+	margin: 10px;
+	border-bottom: 1px solid lightpink;
+	padding-bottom: 10px;
+}
+
+.questionItem:last-child{
+	border-bottom: none;
 }
